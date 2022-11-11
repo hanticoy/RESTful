@@ -1,7 +1,6 @@
 
 const mongoose = require('../config/mongoose.config')
 
-
 // Las tareas se deben devolver en un formato JSON. Ten en cuenta las tareas como objetos con las siguientes propiedades:
 //  _id: (cadena) (ID predeterminado generado por MongoDB)
 // title: (cadena)

@@ -14,8 +14,8 @@ module.exports = function (app) {
         datasController.queryAll(req,res);
     });
 
-    app.get('/queryBiId', function (req, res) {
-        datasController.queryBiId(req,res);
+    app.get('/queryById', function (req, res) {
+        datasController.queryById(req,res);
     });
 
     app.post('/new', function (req, res) {

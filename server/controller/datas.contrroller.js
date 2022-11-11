@@ -6,7 +6,7 @@ module.exports = {
         res.json(datas);
     },
 
-    queryBiId: async function (req, res) {
+    queryById: async function (req, res) {
         // {
         //     "_id": "636d57dee80f54419378d9a1"
         // }
@@ -50,7 +50,7 @@ module.exports = {
         // }
         let id = req.body._id;
         
-        Datas.remove({ _id: id })
+        Datas.deleteOne({ _id: id })
             .then(data => res.json(data))
             .catch(err => res.json(err));
     }

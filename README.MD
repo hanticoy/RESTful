@@ -2,14 +2,17 @@ NOTA:
 Para restringir los parametros de salida de una API debemos trabajar la programacion reactiva, ver http://reactivex.io
 
 Para ejecutar requiere instalar:
-npm install express mongoose 
+npm install express mongoose cors
+
+npm install         : tambien se puede usar pero se basa en el package.json
 
 cuando hay error:
 Access to XMLHttpRequest at 'http://localhost:5200/queryAll' from origin 'http://localhost:4200' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 
+
+NOTA PERSONAL
 //habilitar comunicación entre los servidores con puerto
 npm install cors
-
 //en archivo server.js habilitar comunicación entre los servidores con puerto
 const cors = require('cors')
 app.use(cors());

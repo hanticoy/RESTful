@@ -10,8 +10,8 @@ module.exports = {
         // {
         //     "_id": "636d57dee80f54419378d9a1"
         // }
-        let id = req.body._id;
-        
+        let id = req.params.id;
+
         Datas.find({ _id: id })
             .then(data => res.json(data))
             .catch(err => res.json(err));
@@ -45,6 +45,8 @@ module.exports = {
     },
 
     delete: async function (req, res) {
+        
+        
         // {
         //     "_id": "636d57dee80f54419378d9a1"
         // }
@@ -59,4 +61,4 @@ module.exports = {
 
 
 
-
+ 

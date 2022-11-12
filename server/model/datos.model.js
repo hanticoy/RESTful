@@ -18,6 +18,8 @@ const datasSchema = new mongoose.Schema(
     }, { timestamps: true }
 );
 
+
+
 // crea un objeto que contenga métodos para que Mongoose interactúe con MongoDB
 const datas = mongoose.model('data', datasSchema);
 

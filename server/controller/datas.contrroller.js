@@ -7,23 +7,14 @@ module.exports = {
     },
 
     queryById: async function (req, res) {
-        // {
-        //     "_id": "636d57dee80f54419378d9a1"
-        // }
         let id = req.params.id;
-
         Datas.find({ _id: id })
             .then(data => res.json(data))
             .catch(err => res.json(err));
     },
     
     new: async function (req, res) {
-        // {
-        //     first_name: 'steve',
-        //     last_name: 'Jobs',
-        //     email: 'steve.jobs@gmail.com',
-        //     password: '123456'
-        // }
+        
         const body = req.body;
         const user = new Datas(body);
         user.save()
@@ -32,26 +23,24 @@ module.exports = {
     },
 
     update: async function (req, res) {
-        // {
-        //     "_id": "636d57dee80f54419378d9a1"
-        // }
         const body = req.body;
-
         const id = body._id;
-        
-        Datas.updateOne({ _id: id, body })
-            .then(data => res.json(data))
-            .catch(err => res.json(err));
+        // console.log('Api in:' + body._id + '|'+ body.title  + '|'+ body.description  + '|'+ body.completed);
+
+        Datas.findOneAndUpdate({_id: id}, {title:body.title, description:body.description, completed: body.completed}, function(err, data){
+            if (err) {
+                res.json(err)     
+            }else{
+                console.log('Api out:' + data);
+                res.json(data);
+            }
+        }    
+        );
+            
     },
 
     delete: async function (req, res) {
-        
-        
-        // {
-        //     "_id": "636d57dee80f54419378d9a1"
-        // }
-        let id = req.body._id;
-        
+        let id = req.params.id;
         Datas.deleteOne({ _id: id })
             .then(data => res.json(data))
             .catch(err => res.json(err));

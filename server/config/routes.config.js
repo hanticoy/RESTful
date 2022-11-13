@@ -26,7 +26,7 @@ module.exports = function (app) {
         datasController.update(req,res);
     });
 
-    app.delete('/delete', function (req, res) {
+    app.delete('/delete/:id', function (req, res) {
         datasController.delete(req,res);
     });
 }
